@@ -1,0 +1,16 @@
+body{
+       background-image: url("img/fondo4.jpg");
+       max-height: 900px;
+     }
+     h1{
+       text-align: center;
+     }
+
+      #formie{
+       margin-left: 20px;
+       margin-top: 20px;
+       color:white;
+      }
+      #hs, #min{
+        width: 50px;
+      }
