@@ -1,7 +1,5 @@
 /*https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Classes/*/
 
-
-
 const Actor = require('./Actor');
 const Logger = require('./Logger');
 const Movie = require('./Movie');
