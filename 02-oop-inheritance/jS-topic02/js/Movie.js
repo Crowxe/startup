@@ -1,33 +1,49 @@
-class Movie extends EventEmitter{
-  constructor(title, year, duration) {
+"use strict";
+
+const EventEmitter = require('./EventEmitter');
+
+module.exports = class Movie extends EventEmitter
+{
+  constructor(title,year,duracion){
+    super();
     this.title = title;
     this.year = year;
-    this.duration = duration;
-    this.cast = [];
-
+    this.duration = duracion;
+    this.actors = [];
   }
 
-  play(){
-    console.log("Playing: "+this.title);
-  }
-
-  pause(){
-    console.log(this.title + " paused");
-  }
-
-  resume(){
-    console.log("Resuming: "+this.title);
-  }
-
-  addCast(castedActors){
-    for (let i=0; i<cast.length;i++){
-            this.cast.push(castedActors[i])
+  addCast(actorslist){
+    for (let i=0; i<actorslist.length;i++){
+            this.actors.push(actorslist[i])
           }
   }
 
-  seeCast(){
-    for(let i=0; i<this.cast.length; i++){
-      console.log("Cast: " + this.cast[i]);
-    }
+  getCast(){
+     return this.actors;
   }
+
+  getTitle(){
+    return this.title;
+  }
+
+  getYear(){
+    return this.year;
+  }
+
+  getDuration(){
+    return this.duration;
+  }
+
+  play(){
+    console.log("Play Movie");
+  }
+
+  pause(){
+    console.log("Pause Movie");
+  }
+
+  resume(){
+    console.log("Resume Movie");
+  }
+
 }

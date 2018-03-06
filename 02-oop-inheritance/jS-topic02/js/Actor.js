@@ -1,15 +1,23 @@
-class Actor{
+module.exports = class Actor{
+
   constructor(nombre, edad){
       this.name=nombre;
       this.age=edad;
   }
+
   getName(){
     return this.name;
   }
+
   getAge(){
     return this.age;
   }
-  salute(){
-    console.log("Hi i'm: "+this.name + " I'm " + this.age);
+
+  changeName(newname){
+    this.name=newname;
+  }
+
+  changeAge(newage){
+    this.age=newage;
   }
 }

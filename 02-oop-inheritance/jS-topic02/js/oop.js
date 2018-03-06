@@ -1,25 +1,39 @@
-//Not attached yet
+/*https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Classes*/
 
-const movie1 = new Movie('Interstellar', 2014 , 180);
-const movie2 = new Movie('Pulp Fiction', 1994 , 180);
+import Actor from "js/Actor.js"
+import Logger from "js/Logger.js"
+import event_emitter from "js/EventEmitter.js"
+import Movie from "js/Movie.js"
 
+let taxid = new Movie("Interstellar", 2014, "3h 0m");
 
-const actor1 = new Actor('Samuel Jackson', 50);
-const actor2 = new Actor('Matthew McConaughey', 40);
-const actor3 = new Actor('John Travolta', 45);
-const actor4 = new Actor('Uma Thurman', 39);
-const actor5 = new Actor('Michael Kayne', 74);
-const actor6 = new Actor('Marion Cotillard', 28);
+const terminator = new Movie('Terminator I', 1985, 60);
+const arnold = new Actor('Arnold Schwarzenegger', 50);
+const actors = [
+    new Actor('Paul Winfield', 50),
+    new Actor('Michael Biehn', 50),
+    new Actor('Linda Hamilton', 50)
+];
+const logger = new Logger();
 
-movie1.addCast(actor1);
-movie1.addCast(actor2);
-movie1.addCast(actor3);
-movie1.addCast(actor4);
+terminator.addCast(arnold);
+terminator.addCast(actors);
+terminator.on("play", logger.log);
+terminator.play();
 
-movie2.addCast(actor1);
-movie2.addCast(actor2);
-movie2.addCast(actor3);
-movie2.addCast(actor4);
-movie2.addCast(actor5);
+/* MIXIN */
 
-movie1.play();
+let social = {
+    share(friend_name){
+        console.log(friend_name + " shares " + this.title);
+    },
+    like(friend_name){
+        console.log(friend_name + " likes " + this.title);
+    }
+}
+
+const spun = new Movie("Spun", 2002, "1h 41m");
+
+Object.assign (spun, social);
+
+spun.like("Daniel Schaerer");
