@@ -1,4 +1,4 @@
-module.exports = class Actor{
+export default class Actor{
 
   constructor(nombre, edad){
       this.name=nombre;
