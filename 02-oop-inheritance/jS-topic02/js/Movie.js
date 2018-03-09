@@ -1,8 +1,6 @@
-"use strict";
+import EventEmitter from './EventEmitter';
 
-const EventEmitter = require('./EventEmitter');
-
-module.exports = class Movie extends EventEmitter
+export default class Movie extends eventEmitter
 {
   constructor(title,year,duracion){
     super();
